@@ -2,11 +2,9 @@ import json
 
 
 def extract_values(obj, key):
-    """遞迴提取指定key的所有值"""
-    arr = []
 
+    arr = []
     def extract(obj, arr, key):
-        """子函式進行遞迴搜索"""
         if isinstance(obj, dict):
             for k, v in obj.items():
                 if isinstance(v, (dict, list)):
@@ -22,7 +20,7 @@ def extract_values(obj, key):
     return results
 
 
-# 從JSON檔案讀取
+
 with open('./response/健身.json', 'r', encoding='utf-8') as file:
     data = json.load(file)
 
